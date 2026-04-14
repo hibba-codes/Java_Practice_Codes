@@ -1,1 +1,27 @@
+import java.util.Scanner;
+import java.util.Random;
+// Rock , paper , scissor game;
+public class Game{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        Random num = new Random();
 
+        System.out.println("Enter 0 for Rock , 1 for paper , 2 for scissor: ");
+        int Hiba = input.nextInt();
+        int computer = num.nextInt(3);
+
+        System.out.println("Computer Chose : " + computer);
+        if(Hiba == computer){
+            System.out.println("===Match Draw===");
+        }
+        else if(Hiba == 0 && computer == 2||
+                Hiba == 1 && computer == 0||
+                Hiba == 2 && computer == 1){
+            System.out.println("===Hiba Win===");
+        }
+        else{
+            System.out.println("===Computer Win===");
+        }
+    }
+
+}
