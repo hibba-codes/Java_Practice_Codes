@@ -1,0 +1,60 @@
+class Library {
+    String libraryName;
+    public Library(String n){
+        this.libraryName = n;
+    }
+
+    public void show_Library(){
+        System.out.println("\n======Information======\n");
+        System.out.println("Library Name : " + libraryName);
+    }
+}
+class Book extends Library{
+
+    String bookTitle;
+    String author;
+    public Book(String n , String b, String a){
+        super(n);
+        this.bookTitle = b;
+        this.author = a;
+    }
+    public void show_Book(){
+        System.out.println("Book Title : " + bookTitle);
+        System.out.println("Author Name : " + author);
+
+    }
+}
+class Issue_Book extends Book{
+    String studentName;
+    String department;
+    int rollNo;
+    public Issue_Book(String n , String b , String a, String studentName , String d , int r){
+        super(n , b , a );
+        this.studentName = studentName;
+        this.department = d;
+        this.rollNo = r;
+    }
+
+
+    public void issue_Book (){
+        System.out.println("Student Name : " + studentName);
+        System.out.println("Department : " + department);
+        System.out.println("Roll no : " + rollNo);
+        System.out.println("\n=============================\n");  
+    }
+}
+public class Information{
+    public static void main(String[] args){
+        Issue_Book Student1 = new Issue_Book("Quest Central Library" , "Java Basics" , "Ali Raza" , "Hibba Iqbal" , "Data Science" , 10);
+        Student1.show_Library();
+        Student1.show_Book();
+        Student1.issue_Book();
+
+        Issue_Book Student2 = new Issue_Book("Quest Central Library" , "C Language" , "Ayesha", "Arooba Arshad" , "Data Science" , 9);
+        Student2.show_Library();
+        Student2.show_Book();
+        Student2.issue_Book();
+
+
+    }
+}
